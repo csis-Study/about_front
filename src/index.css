@@ -109,3 +109,52 @@ code {
     font-size: 20px;
     font-weight: 500;
 }
+.person-index-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.user-info-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.message-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message-list {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1;
+}
+
+.message-list h2 {
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fafafa;
+}
+
+.message-list .ant-list-item {
+    padding: 12px 15px;
+}
+    

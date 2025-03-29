@@ -23,10 +23,10 @@ const roleModules = {
             {
                 key: "plans",
                 icon: <SolutionOutlined />,
-                label: "方案制定",
+                label: "推荐方案",
                 children: [
                     { key: "create", label: "新建方案" },
-                    { key: "template", label: "方案模板" },
+                    { key: "template", label: "客户推荐" },
                 ],
             },
             {
@@ -34,7 +34,7 @@ const roleModules = {
                 icon: <TransactionOutlined />,
                 label: "委托交易",
                 children: [
-                    { key: "execute", label: "执行交易" },
+                    { key: "execute", label: "发起交易" },
                     { key: "approvals", label: "待审批交易" },
                 ],
             },
@@ -43,7 +43,7 @@ const roleModules = {
                 icon: <TransactionOutlined />,
                 label: "产品管理",
                 children: [
-                    { key: "plists", label: "产品列表" },
+                    { key: "plists", label: "产品组合" },
                     { key: "pdetails", label: "产品详情" },
                 ],
             },
