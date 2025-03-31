@@ -183,18 +183,21 @@ const Login = () => {
             const response = await axios.post("http://localhost:9001/api/login", {
                 username,
                 password,
-                role
+                role,
             });
             console.log("username", username);
             console.log("response.data", response.data);
 
             if (response.data.code === 200) {
-                const { token, role } = response.data.data;
+                const { id, token, role } = response.data.data;
+                console.log(response.data.data);
+                
                 localStorage.setItem("token", token);
                 localStorage.setItem("role", role);
                 localStorage.setItem("isLoggedIn", true);
+                localStorage.setItem("id", id);
                 // 更新用户信息到 Context
-                setUser({ username, role });
+                setUser({ username, role, id });
                 message.success("登录成功！");
                 navigate("/clients");
             } else {
@@ -233,6 +236,7 @@ const Login = () => {
     const clearLocalStorage = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("role");
+        localStorage.removeItem("id")
     };
 
     return (

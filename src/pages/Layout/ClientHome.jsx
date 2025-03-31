@@ -3,6 +3,7 @@ import { Layout, Menu, theme } from 'antd';
 import { PieChartOutlined, SolutionOutlined, TransactionOutlined, NotificationOutlined } from "@ant-design/icons";
 import Logout from '../../components/Logout'
 import PersonIndex from '../ClientPage/Person/PersonIndex'
+import AccountOverview from '../ClientPage/Person/AccountOverview'
 
 const { Header, Content, Sider } = Layout;
 
@@ -69,8 +70,9 @@ const ClientHome = () => {
 
     const renderContent = () => {
         const moduleMap = {
-            balance: <div>账户余额内容...</div>,
+            balance: <div>111</div>,
             portfolio: <div>投资组合分析...</div>,
+            details: <div><AccountOverview></AccountOverview></div>,
             // ...
             default: <div><PersonIndex></PersonIndex></div>,
         };
