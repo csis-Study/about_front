@@ -5,6 +5,7 @@ import Logout from '../../components/Logout'
 import ProductManage from '../AdvisorPage/Products/ProductManage';
 import ProductItem from '../AdvisorPage/Products/ProductItem';
 import ClientManage from '../AdvisorPage/Clients/ClientManage';
+import AssetsAnalysis from '../AdvisorPage/Clients/AssetsAnalysis';
 
 const { Header, Content, Sider } = Layout;
 
@@ -61,7 +62,7 @@ const AdvisorHome = () => {
     const renderContent = () => {
         const moduleMap = {
             profile: <div><ClientManage /></div>,
-            analysis: <div>资产分析内容...</div>,
+            analysis: <div><AssetsAnalysis /></div>,
             plists: <div><ProductManage></ProductManage></div>,
             pdetails: <div><ProductItem /></div>,
             default: <div>请选择功能模块</div>,

@@ -81,7 +81,11 @@ const ClientHome = () => {
           <AccountOverview></AccountOverview>
         </div>
       ),
-      portfolio: <div>投资组合分析...</div>,
+      portfolio: (
+        <div>
+          ...
+        </div>
+      ),
       details: (
         <div>
           <AccentDetails></AccentDetails>
