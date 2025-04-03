@@ -1,0 +1,62 @@
+/* 全局样式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* 覆盖Ant Design的一些默认样式 */
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-header {
+  background: #fff;
+  padding: 0 24px;
+}
+
+.ant-layout-content {
+  margin: 24px 16px;
+  padding: 24px;
+  background: #fff;
+}
+
+.ant-layout-sider {
+  background: #fff;
+}
+
+.ant-card {
+  margin-bottom: 16px;
+}
+
+/* 自定义样式 */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-stats {
+  margin-bottom: 24px;
+}
+
+/* 角色仪表板样式 */
+.dashboard-content {
+  padding: 20px 0;
+}
+
+/* 表格样式 */
+.ant-table-wrapper {
+  margin-top: 16px;
+}
+
+/* 表单样式 */
+.login-form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.login-button {
+  width: 100%;
+} 

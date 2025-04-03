@@ -187,7 +187,11 @@ export default function AdminManage() {
       ? `${API_BASE_URL}/admins/${searchType === 'username' ? 'username' : 'name'}/${searchText}?page=${pagination.current}&pageSize=${pagination.pageSize}`
       : `${API_BASE_URL}/admins?page=${pagination.current}&pageSize=${pagination.pageSize}`;
 
-    fetch(url)
+    fetch(url, {
+      headers: {
+        'Authorization': localStorage.getItem('token')
+      }
+    })
       .then(response => response.json())
       .then(data => {
         if (data.code === 200) {
@@ -217,6 +221,9 @@ export default function AdminManage() {
   const handleDelete = (id) => {
     fetch(`${API_BASE_URL}/admins/${id}`, {
       method: 'DELETE',
+      headers: {
+        'Authorization': localStorage.getItem('token')
+      }
     })
       .then(response => {
         if (response.status === 204) {

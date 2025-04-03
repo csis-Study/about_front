@@ -61,7 +61,11 @@ const AdvisorManagement = () => {
       : `${API_BASE_URL}/advisors?page=${pagination.current}&pageSize=${pagination.pageSize}`;
   
     axios
-     .get(url)
+     .get(url, {
+      headers: {
+        'Authorization': localStorage.getItem("token")
+      }
+     })
      .then((response) => {
         if (response.data.code === 200) {
           let dataToSet = response.data.data;
@@ -84,7 +88,11 @@ const AdvisorManagement = () => {
   // 删除客户经理的函数
   const handleDelete = (id) => {
     axios
-     .delete(`${API_BASE_URL}/advisors/delete/${id}`)
+     .delete(`${API_BASE_URL}/advisors/delete/${id}`, {
+      headers: {
+        'Authorization': localStorage.getItem("token")
+      }
+     })
      .then((response) => {
         if (response.status === 204) {
           message.success("删除成功");
@@ -112,6 +120,11 @@ const AdvisorManagement = () => {
       const values = await form.validateFields();
       const response = await axios.post(
         `${API_BASE_URL}/advisors`,
+        {
+          headers: {
+            'Authorization': localStorage.getItem("token")
+          }
+        },
         values
       );
       if (response.data.code === 200) {

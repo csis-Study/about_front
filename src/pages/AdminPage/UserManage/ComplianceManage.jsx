@@ -30,7 +30,11 @@ const ApprovalPersonnelManagement = () => {
       : `${API_BASE_URL}/approval-personnel`;
 
     axios
-     .get(url)
+     .get(url, {
+       headers: {
+         'Authorization': localStorage.getItem('token')
+        }
+     })
      .then((response) => {
         if (response.data.code === 200) {
           setApprovalPersonnelList(response.data.data);
@@ -42,7 +46,11 @@ const ApprovalPersonnelManagement = () => {
   // 删除审批人员的函数
   const handleDelete = (id) => {
     axios
-     .delete(`${API_BASE_URL}/approval-personnel/${id}`)
+     .delete(`${API_BASE_URL}/approval-personnel/${id}`, {
+       headers: {
+         'Authorization': localStorage.getItem('token')
+        }
+     })
      .then((response) => {
         if (response.data.code === 200) {
           message.success("删除成功");
@@ -70,6 +78,11 @@ const ApprovalPersonnelManagement = () => {
       const values = await form.validateFields();
       const response = await axios.post(
         `${API_BASE_URL}/approval-personnel`,
+        {
+          headers: {
+            'Authorization': localStorage.getItem("token")
+          }
+        },
         values
       );
       if (response.data.code === 200) {
@@ -252,7 +265,7 @@ const ApprovalPersonnelManagement = () => {
             name="role"
             rules={[{ required: true, message: "请输入角色" }]}
           >
-            <Input defaultValue="approval" disabled />
+            <Input defaultValue="approval" />
           </Form.Item>
           <Form.Item
             label="状态"

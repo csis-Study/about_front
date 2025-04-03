@@ -71,7 +71,11 @@ const fetchRiskOfficers = () => {
     : `${API_BASE_URL}/risk-officers`;
 
   axios
-   .get(url)
+   .get(url, {
+    headers: {
+      'Authorization': localStorage.getItem("token")
+    }
+   })
    .then((response) => {
       if (response.data.code === 200) {
         let dataToSet = response.data.data;
@@ -88,7 +92,11 @@ const fetchRiskOfficers = () => {
   // 删除风险官员的函数
   const handleDelete = (id) => {
     axios
-     .delete(`${API_BASE_URL}/risk-officers/${id}`)
+     .delete(`${API_BASE_URL}/risk-officers/${id}`, {
+      headers: {
+        'Authorization': localStorage.getItem("token")
+      }
+     })
      .then((response) => {
         if (response.data.code === 200) {
           message.success("删除成功");
@@ -116,6 +124,11 @@ const fetchRiskOfficers = () => {
       const values = await form.validateFields();
       const response = await axios.post(
         `${API_BASE_URL}/risk-officers`,
+        {
+          headers: {
+            'Authorization': localStorage.getItem("token")
+          }
+        },
         values
       );
       if (response.data.code === 200) {

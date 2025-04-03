@@ -1,0 +1,53 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+  background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+  background-repeat: no-repeat;
+  background-position: center 110px;
+  background-size: 100%;
+}
+
+.login-card {
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+/* Cookie Modal样式 */
+.ant-modal-body {
+  padding: 24px;
+}
+
+.ant-radio-wrapper {
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+/* 媒体查询，适配移动设备 */
+@media screen and (max-width: 480px) {
+  .login-card {
+    width: 85%;
+    min-width: 300px;
+  }
+  
+  .ant-modal {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+} 
